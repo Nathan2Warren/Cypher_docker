@@ -7,7 +7,7 @@ This container uses allows a user to input text to be encoded by a user defined 
 To load the Docker image, run the following:
 *Key must be an int.*
 ```
-docker pull nathan2warren/caesar_cipher:latest
+docker pull nathan2warren/caesar_cypher:latest
 ```
 
 ### List docker images
@@ -17,7 +17,7 @@ docker image ls
 ```
 
 ### Run this container
-Text is what you wish to encrypt. Key must be an integer.
+*Text* is what you wish to encrypt. *Key* must be an integer.
 
 ```
 docker run -it nathan2warren/caesar_cypher:latest python app.py --text "text" --key "key"
