@@ -20,13 +20,13 @@ docker image ls
 *Text* is what you wish to encrypt. *Key* must be an integer.
 
 ```
-docker run -it nathan2warren/caesar_cipher:latest python app.py --text "text" --key "key"
+docker run -it nathan2warren/caesar_cypher:latest python app.py --text "text" --key "key"
 ```
 
 ### Exmaple
 
 ```
-docker run -it nathan2warren/caesar_cipher:latest python app.py --text "abbccc" --key "2"  
+docker run -it nathan2warren/caesar_cypher:latest python app.py --text "abbccc" --key "2"  
 > Original: abbccc
 > Shift: 2
 > Encrypted: cddeee
