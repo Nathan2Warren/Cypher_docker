@@ -1,45 +1,35 @@
-# container-from-scratch-python
-This is building a container from scratch
+# Caesar-Cypher-Container
 
-## Build the Container Yourself and Push to Docker Hub
+This container uses allows a user to input text to be encoded by a user defined key. This is a caesar cypher, which works by shifting letters by a key value. For example, if we had the text input of "a" and a key input of "2", the encrypted output would be "c."
 
-### Build image
-*(If you want to develop yourself)* 
-docker build --tag=hello-duke-cli-210 .
+### Load Docker Image
+
+To load the Docker image, run the following:
+*Key must be an int.*
+```
+docker pull nathan2warren/caesar_cipher:latest
+```
 
 ### List docker images
+You should see the docker image you have pulled.
+```
 docker image ls
-
-### Run my newly built container
-
-docker run -it hello-duke-cli-210 python app.py --name "Big John"
-
-### Push to Docker Hub
-
-*Note:  You will need to change for your Docker Hub Repo*
-docker push noahgift/duke102:tagname
-
-## Run it yourself
-
-```bash
-docker pull noahgift/cloudapp:latest
-docker run -it noahgift/cloudapp bash 
-
-#then run python app.py --help
 ```
 
-## Pass in a command
+### Run this container
+Text is what you wish to encrypt. Key must be an integer.
 
-```bash
-docker run -it noahgift/cloudapp python app.py --name "Big John"
-#the output
-Hello Big John!
+```
+docker run -it nathan2warren/caesar_cypher:latest python app.py --text "text" --key "key"
 ```
 
-### More things Do
+### Exmaple
 
-* Lint the code with Github Actions (see the Makefile)
-* Automatically build the container after lint, and push to DockerHub or some other Container Registery
-
+```
+docker run -it nathan2warren/caesar_cypher:latest python app.py --text "abbccc" --key "2"  
+> Original: abbccc
+> Shift: 2
+> Encrypted: cddeee
+```
 
 

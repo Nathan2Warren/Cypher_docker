@@ -1,6 +1,11 @@
 #!/usr/bin/env python
+import click
 
-def encrypt(text, key):
+@click.command()
+@click.option('--text', type = str)
+@click.option('--key', type = int)
+
+def encrypt(text = 'blank', key = '2'):
     encrypted = ""
 
     for i in range(len(text)):
@@ -11,16 +16,13 @@ def encrypt(text, key):
 
         else:
             encrypted += chr((ord(char) + key - 97) % 26 + 97)
-
-    return encrypted
+            
+    print(f'Original: {text}')
+    print(f'Shift: {key}')
+    print(f'Encrypted: {encrypted}')
 
 
 if __name__ == '__main__':
     # pylint: disable=no-value-for-parameter
-    data = input("Please enter text and key separated by a space: ").split()
-    text = str(data[0])
-    key = int(data[1])
-    encrypted = encrypt(text, key)
-    print(f'Original: {text}')
-    print(f'Shift: {key}')
-    print(f'Encrypted: {encrypted}')
+    encrypt()
+
