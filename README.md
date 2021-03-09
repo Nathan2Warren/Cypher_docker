@@ -17,7 +17,7 @@ docker image ls
 ```
 
 ### Run this container
-Text is what you wish to encrypt. Key must be an integer.
+*Text* is what you wish to encrypt. *Key* must be an integer.
 
 ```
 docker run -it nathan2warren/caesar_cypher:latest python app.py --text "text" --key "key"
